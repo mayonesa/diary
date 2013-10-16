@@ -1,0 +1,13 @@
+package diary
+
+class Entry {
+
+    int id
+    String title
+    String text
+    Date createDate
+    Date updateDate
+    Author user
+    
+    static belongsTo = [author: Author]
+}
