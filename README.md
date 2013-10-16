@@ -1,4 +1,4 @@
 diary
 =====
 
-captures timestamped diary entries
+grails app that captures timestamped diary entries
