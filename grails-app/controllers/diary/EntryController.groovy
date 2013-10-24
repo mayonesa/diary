@@ -1,7 +1,5 @@
 package diary
 
-
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -39,7 +37,7 @@ class EntryController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'entryInstance.label', default: 'Entry'), entryInstance.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'entryInstance.label', default: 'Entry'), entryInstance.title])
                 redirect entryInstance
             }
             '*' { respond entryInstance, [status: CREATED] }
@@ -66,7 +64,7 @@ class EntryController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Entry.label', default: 'Entry'), entryInstance.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'Entry.label', default: 'Entry'), entryInstance.title])
                 redirect entryInstance
             }
             '*'{ respond entryInstance, [status: OK] }
@@ -85,7 +83,7 @@ class EntryController {
 
         request.withFormat {
             form {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Entry.label', default: 'Entry'), entryInstance.id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Entry.label', default: 'Entry'), entryInstance.title])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }

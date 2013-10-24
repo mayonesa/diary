@@ -21,13 +21,21 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<ol class="property-list entry">
-			
-				<g:if test="${entryInstance?.author}">
+			<ol class="property-list entry">			
+				<g:if test="${entryInstance?.title}">
 				<li class="fieldcontain">
-					<span id="author-label" class="property-label"><g:message code="entry.author.label" default="Author" /></span>
+					<span id="title-label" class="property-label"><g:message code="entry.title.label" default="Title" /></span>
 					
-						<span class="property-value" aria-labelledby="author-label"><g:link controller="author" action="show" id="${entryInstance?.author?.id}">${entryInstance?.author?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${entryInstance}" field="title"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${entryInstance?.text}">
+				<li class="fieldcontain">
+					<span id="text-label" class="property-label"><g:message code="entry.text.label" default="Content" /></span>
+					
+						<span class="property-value" aria-labelledby="text-label"><g:fieldValue bean="${entryInstance}" field="text"/></span>
 					
 				</li>
 				</g:if>
@@ -37,24 +45,6 @@
 					<span id="createDate-label" class="property-label"><g:message code="entry.createDate.label" default="Create Date" /></span>
 					
 						<span class="property-value" aria-labelledby="createDate-label"><g:formatDate date="${entryInstance?.createDate}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${entryInstance?.text}">
-				<li class="fieldcontain">
-					<span id="text-label" class="property-label"><g:message code="entry.text.label" default="Text" /></span>
-					
-						<span class="property-value" aria-labelledby="text-label"><g:fieldValue bean="${entryInstance}" field="text"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${entryInstance?.title}">
-				<li class="fieldcontain">
-					<span id="title-label" class="property-label"><g:message code="entry.title.label" default="Title" /></span>
-					
-						<span class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${entryInstance}" field="title"/></span>
 					
 				</li>
 				</g:if>

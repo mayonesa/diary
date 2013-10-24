@@ -12,7 +12,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: entryInstance, field: 'text', 'error')} ">
 	<label for="Entry">
-		<g:message code="entry.text.label" default="Text" />
+		<g:message code="entry.text.label" default="Content" />
 		
 	</label>
 	<g:textArea name="text" value="${entryInstance?.text}"/>

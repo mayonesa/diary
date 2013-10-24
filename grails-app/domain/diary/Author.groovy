@@ -8,9 +8,9 @@ class Author {
     String username
     String password
     
-    static hasMany = [entries: Entry]
+//    static hasMany = [entries: Entry]
 
     static constraints = {
-	middleName nullable: true
+		middleName nullable: true
     }
 }
